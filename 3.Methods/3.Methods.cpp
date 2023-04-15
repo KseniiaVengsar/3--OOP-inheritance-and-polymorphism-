@@ -11,17 +11,17 @@ public:
 	
 	virtual void fig_type() {
 
-		std::cout << "Ôèãóðà:" << std::endl;
+		std::cout << "Ð¤Ð¸Ð³ÑƒÑ€Ð°:" << std::endl;
 
 	}
 
 	virtual bool check() {
-		std::cout << "Ïðàâèëüíàÿ" << std::endl;
+		std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 		return true;
 	}
 	virtual void print_sides_count() {
 
-		std::cout << "Êîëè÷åñòâî ñòîðîí: 0" << std::endl;
+		std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ð¾Ñ€Ð¾Ð½: 0" << std::endl;
 	}
 
 };
@@ -34,7 +34,7 @@ void print_info(Figure* figure) {
 }
 // /////////////////////////////////////////////////////////////////////////////////
 class Triangle :public Figure {
-	//òðåóãîëüíèê (ñòîðîíû è óãëû ïðîèçâîëüíûå, êîëè÷åñòâî ñòîðîí ðàâíî 3, ñóììà óãëîâ ðàâíà 180);
+	//Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº (ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹ Ð¸ ÑƒÐ³Ð»Ñ‹ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð»ÑŒÐ½Ñ‹Ðµ, ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ð¾Ñ€Ð¾Ð½ Ñ€Ð°Ð²Ð½Ð¾ 3, ÑÑƒÐ¼Ð¼Ð° ÑƒÐ³Ð»Ð¾Ð² Ñ€Ð°Ð²Ð½Ð° 180);
 protected:
 	int a; int b; int c;
 	int A; int B; int C;
@@ -52,18 +52,18 @@ public:
 
 	void fig_type() override {
 
-		std::cout << "òðåóãîëüíèê:" << std::endl;
+		std::cout << "Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
 
 	}
 	bool check() override {
-		// Ïðîâåðÿåì, ÷òî ñóììà óãëîâ ðàâíà 180 ãðàäóñîâ
+		// ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼, Ñ‡Ñ‚Ð¾ ÑÑƒÐ¼Ð¼Ð° ÑƒÐ³Ð»Ð¾Ð² Ñ€Ð°Ð²Ð½Ð° 180 Ð³Ñ€Ð°Ð´ÑƒÑÐ¾Ð²
 		if (A + B + C != 180) {
-			std::cout << "Íåïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return false;
 			
 		}
 		else {
-			std::cout << "Ïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return true;
 		}
 		
@@ -71,13 +71,13 @@ public:
 	}
 	
 	void print_sides_count() {
-		std::cout << "Êîëè÷åñòâî ñòîðîí: 3" << std::endl;
-		std::cout << "Ñòîðîíû: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << std::endl;
-		std::cout << "Óãëû: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << std::endl;
+		std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ð¾Ñ€Ð¾Ð½: 3" << std::endl;
+		std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << std::endl;
+		std::cout << "Ð£Ð³Ð»Ñ‹: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << std::endl;
 	}
 };
 class Right_triangle :public Triangle {
-	//Ïðÿìîóãîëüíûé òðåóãîëüíèê:
+	//ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:
 	
 public:
 	Right_triangle( int a_, int b_, int c_, int A_, int B_, int C_) :Triangle( a_, b_, c_, A_, B_, C_) {
@@ -85,32 +85,32 @@ public:
 	}
 	 void fig_type() override {
 
-		std::cout << "Ïðÿìîóãîëüíûé òðåóãîëüíèê:" << std::endl;
+		std::cout << "ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
 
 	}
-	//ïðÿìîóãîëüíûé òðåóãîëüíèê(óãîë C âñåãäà ðàâåí 90);
+	//Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº(ÑƒÐ³Ð¾Ð» C Ð²ÑÐµÐ³Ð´Ð° Ñ€Ð°Ð²ÐµÐ½ 90);
 	 bool check() override {
 		
 		if (C != 90) {
 
-			std::cout << "Íåïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return false;
 		}	
 		else {
-			std::cout << "Ïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return true;
 		}
 	}
 };
 class Isosceles_triangle :public Triangle {
-	//Ðàâíîáåäðåííûé òðåóãîëüíèê//ðàâíîáåäðåííûé òðåóãîëüíèê (ñòîðîíû a è c ðàâíû, óãëû A è C ðàâíû);
+	//Ð Ð°Ð²Ð½Ð¾Ð±ÐµÐ´Ñ€ÐµÐ½Ð½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº//Ñ€Ð°Ð²Ð½Ð¾Ð±ÐµÐ´Ñ€ÐµÐ½Ð½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº (ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹ a Ð¸ c Ñ€Ð°Ð²Ð½Ñ‹, ÑƒÐ³Ð»Ñ‹ A Ð¸ C Ñ€Ð°Ð²Ð½Ñ‹);
 public:
 	Isosceles_triangle(int a_, int b_, int A_, int B_) :Triangle( a_, b_, b_, A_, B_, B_) {
 
 	}
 	void fig_type() override {
 
-		std::cout << "Ðàâíîáåäðåííûé òðåóãîëüíèê:" << std::endl;
+		std::cout << "Ð Ð°Ð²Ð½Ð¾Ð±ÐµÐ´Ñ€ÐµÐ½Ð½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
 
 	}
 	bool check() override {
@@ -118,25 +118,25 @@ public:
 		if (a != c && A != C) {
 
 			
-			std::cout << "Íåïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return false;
 		}
 		else {
 			
-			std::cout << "Ïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return true;
 		}
 	}
 };
 class Equilateral_triangle :public Triangle {
-	//Ðàâíîñòîðîííèé òðåóãîëüíèê//ðàâíîñòîðîííèé òðåóãîëüíèê (âñå ñòîðîíû ðàâíû, âñå óãëû ðàâíû 60);
+	//Ð Ð°Ð²Ð½Ð¾ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½Ð¸Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº//Ñ€Ð°Ð²Ð½Ð¾ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½Ð¸Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº (Ð²ÑÐµ ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹ Ñ€Ð°Ð²Ð½Ñ‹, Ð²ÑÐµ ÑƒÐ³Ð»Ñ‹ Ñ€Ð°Ð²Ð½Ñ‹ 60);
 public:
 	Equilateral_triangle( int a_, int A_) :Triangle( a_, a_, a_, A_, A_, A_) {
 
 	}
 	void fig_type() override {
 
-		std::cout << "Ðàâíîñòîðîííèé òðåóãîëüíèê:" << std::endl;
+		std::cout << "Ð Ð°Ð²Ð½Ð¾ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½Ð¸Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
 
 	}
 	bool check() override {
@@ -144,12 +144,12 @@ public:
 		if ((a != c && a != b || c != a && c != b || b != a && b != c)&&(A != 60 || B != 60 || C != 60)) {
 
 			
-			std::cout << "Íåïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return false;
 		}
 		else {
 			
-			std::cout << "Ïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return true;
 		}
 	
@@ -158,8 +158,8 @@ public:
 
 ////////////////////////////////////////////////////////////////////////////////
 class Quadrangle :public Figure {
-	//×åòûð¸õóãîëüíèê:Äëÿ òðåóãîëüíèêà è ÷åòûð¸õóãîëüíèêà äîáàâèòñÿ èíôîðìàöèÿ î äëèíå ñòîðîí è âåëè÷èíå óãëîâ.
-	//×òîáû íå äóáëèðîâàòü êîä, èñïîëüçóéòå â ïåðåîïðåäåëåíèè ìåòîäà print_info áàçîâóþ âåðñèþ èç êëàññà ôèãóðû.
+	//Ð§ÐµÑ‚Ñ‹Ñ€Ñ‘Ñ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:Ð”Ð»Ñ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ° Ð¸ Ñ‡ÐµÑ‚Ñ‹Ñ€Ñ‘Ñ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ° Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑÑ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¾ Ð´Ð»Ð¸Ð½Ðµ ÑÑ‚Ð¾Ñ€Ð¾Ð½ Ð¸ Ð²ÐµÐ»Ð¸Ñ‡Ð¸Ð½Ðµ ÑƒÐ³Ð»Ð¾Ð².
+	//Ð§Ñ‚Ð¾Ð±Ñ‹ Ð½Ðµ Ð´ÑƒÐ±Ð»Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ ÐºÐ¾Ð´, Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐ¹Ñ‚Ðµ Ð² Ð¿ÐµÑ€ÐµÐ¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð¸Ð¸ Ð¼ÐµÑ‚Ð¾Ð´Ð° print_info Ð±Ð°Ð·Ð¾Ð²ÑƒÑŽ Ð²ÐµÑ€ÑÐ¸ÑŽ Ð¸Ð· ÐºÐ»Ð°ÑÑÐ° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹.
 protected:
 	int a; int b; int c; int d;
 	int A; int B; int C; int D;
@@ -175,40 +175,40 @@ public:
 		D = D_;
 	}
 	void print_sides_count() {
-		std::cout << "Êîëè÷åñòâî ñòîðîí: 4" << std::endl;
-		std::cout << "Ñòîðîíû: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << " " << "d = " << d << std::endl;
-		std::cout << "Óãëû: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << " " << "D = " << D << std::endl;
+		std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ð¾Ñ€Ð¾Ð½: 4" << std::endl;
+		std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << " " << "d = " << d << std::endl;
+		std::cout << "Ð£Ð³Ð»Ñ‹: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << " " << "D = " << D << std::endl;
 	}
 	 void fig_type() override {
 
-		std::cout << "×åòûð¸õóãîëüíèê:" << std::endl;
+		std::cout << "Ð§ÐµÑ‚Ñ‹Ñ€Ñ‘Ñ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
 
 	}
-	//÷åòûð¸õóãîëüíèê (ñòîðîíû è óãëû ïðîèçâîëüíûå, êîëè÷åñòâî ñòîðîí ðàâíî 4, ñóììà óãëîâ ðàâíà 360);
+	//Ñ‡ÐµÑ‚Ñ‹Ñ€Ñ‘Ñ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº (ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹ Ð¸ ÑƒÐ³Ð»Ñ‹ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð»ÑŒÐ½Ñ‹Ðµ, ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ð¾Ñ€Ð¾Ð½ Ñ€Ð°Ð²Ð½Ð¾ 4, ÑÑƒÐ¼Ð¼Ð° ÑƒÐ³Ð»Ð¾Ð² Ñ€Ð°Ð²Ð½Ð° 360);
 	bool check() override  {
 
 		if (A + B + C + D != 360) {
 
 			
-			std::cout << "Íåïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return false;
 		}
 		else {
 			
-			std::cout << "Ïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return true;
 		}
 	}
 };
 class Rectangle :public Quadrangle {
-	//Ïðÿìîóãîëüíèê:ïðÿìîóãîëüíèê (ñòîðîíû a,c è b,d ïîïàðíî ðàâíû, âñå óãëû ðàâíû 90);
+	//ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº (ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹ a,c Ð¸ b,d Ð¿Ð¾Ð¿Ð°Ñ€Ð½Ð¾ Ñ€Ð°Ð²Ð½Ñ‹, Ð²ÑÐµ ÑƒÐ³Ð»Ñ‹ Ñ€Ð°Ð²Ð½Ñ‹ 90);
 public:
 	Rectangle( int a_, int b_, int A_) :Quadrangle( a_, b_, a_, b_, A_, A_, A_, A_) {
 
 	}
 	void fig_type() override {
 
-		std::cout << "Ïðÿìîóãîëüíèê:" << std::endl;
+		std::cout << "ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
 
 	}
 	bool check() override {
@@ -216,12 +216,12 @@ public:
 		if ((a != b && c != d)&& (A + B + C + D != 90)) {
 
 			
-			std::cout << "Íåïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return false;
 		}
 		else {
 			
-			std::cout << "Ïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return true;
 		}
 
@@ -229,26 +229,26 @@ public:
 	}
 };
 class Square :public Quadrangle {
-	//Êâàäðàò  (âñå ñòîðîíû ðàâíû, âñå óãëû ðàâíû 90);
+	//ÐšÐ²Ð°Ð´Ñ€Ð°Ñ‚  (Ð²ÑÐµ ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹ Ñ€Ð°Ð²Ð½Ñ‹, Ð²ÑÐµ ÑƒÐ³Ð»Ñ‹ Ñ€Ð°Ð²Ð½Ñ‹ 90);
 public:
 	Square( int a_, int A_) :Quadrangle( a_, a_, a_, a_, A_, A_, A_, A_) {
 
 	}
 	void fig_type() override {
 
-		std::cout << "Êâàäðàò:" << std::endl;
+		std::cout << "ÐšÐ²Ð°Ð´Ñ€Ð°Ñ‚:" << std::endl;
 
 	}
 	bool check() override {
 		if ((a != b && a != c && a != d || b != a && b != c && b != d || c != a && c != b && c != d)&& (A != 90 && B != 90 && C != 90 && D != 90)) {
 
 			
-			std::cout << "Íåïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return false;
 		}
 		else {
 			
-			std::cout << "Ïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return true;
 		}
 
@@ -256,52 +256,52 @@ public:
 	}
 };
 class Parallelogram :public Quadrangle {
-	//Ïàðàëëåëîãðàìì
+	//ÐŸÐ°Ñ€Ð°Ð»Ð»ÐµÐ»Ð¾Ð³Ñ€Ð°Ð¼Ð¼
 public:
 	Parallelogram( int a_, int b_, int A_, int B_) :Quadrangle( a_, b_, a_, b_, A_, B_, A_, B_) {
 
 	}
 	 void fig_type() override {
 
-		std::cout << "Ïàðàëëåëîãðàìì:" << std::endl;
+		std::cout << "ÐŸÐ°Ñ€Ð°Ð»Ð»ÐµÐ»Ð¾Ð³Ñ€Ð°Ð¼Ð¼:" << std::endl;
 
 	}
-	//ïàðàëëåëîãðàìì (ñòîðîíû a,c è b,d ïîïàðíî ðàâíû, óãëû A,C è B,D ïîïàðíî ðàâíû);
+	//Ð¿Ð°Ñ€Ð°Ð»Ð»ÐµÐ»Ð¾Ð³Ñ€Ð°Ð¼Ð¼ (ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹ a,c Ð¸ b,d Ð¿Ð¾Ð¿Ð°Ñ€Ð½Ð¾ Ñ€Ð°Ð²Ð½Ñ‹, ÑƒÐ³Ð»Ñ‹ A,C Ð¸ B,D Ð¿Ð¾Ð¿Ð°Ñ€Ð½Ð¾ Ñ€Ð°Ð²Ð½Ñ‹);
 	bool check() override {
 
 		if ((a != b && c != d)&& (A != B && C != D)) {
 
 			
-			std::cout << "Íåïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return false;
 		}
 		else {
 			
-			std::cout << "Ïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return true;
 		}
 	}
 };
 class Rhombus :public Quadrangle {
-	//Ðîìá - (âñå ñòîðîíû ðàâíû, óãëû A,C è B,D ïîïàðíî ðàâíû).
+	//Ð Ð¾Ð¼Ð± - (Ð²ÑÐµ ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹ Ñ€Ð°Ð²Ð½Ñ‹, ÑƒÐ³Ð»Ñ‹ A,C Ð¸ B,D Ð¿Ð¾Ð¿Ð°Ñ€Ð½Ð¾ Ñ€Ð°Ð²Ð½Ñ‹).
 public:
 	Rhombus( int a_, int A_, int B_) :Quadrangle( a_, a_, a_, a_, A_, B_, A_, B_) {
 	}
 	 void fig_type() override {
 
-		std::cout << "Ðîìá:" << std::endl;
+		std::cout << "Ð Ð¾Ð¼Ð±:" << std::endl;
 
 	}
 	bool check() override {
 		if (A != B && C != D) {
 
 			
-			std::cout << "Íåïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return false;
 		}
 		else {
 			
-			std::cout << "Ïðàâèëüíàÿ" << std::endl;
+			std::cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ" << std::endl;
 			return true;
 		}
 	}
@@ -347,7 +347,7 @@ int main() {
 	print_info(parallelogram);
 	std::cout << std::endl;
 
-	// Î÷èñòêà ïàìÿòè
+	// ÐžÑ‡Ð¸ÑÑ‚ÐºÐ° Ð¿Ð°Ð¼ÑÑ‚Ð¸
 	//delete figure;
 	delete triangle;
 	delete right_triangle;

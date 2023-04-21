@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-
 #include <iostream>
 
 class Figure {
@@ -14,10 +13,10 @@ public:
 		std::cout << "Фигура:" << std::endl;
 
 	}
-
+	//false -фигура без определенных сторон не может быть правильной
 	virtual bool check() {
-		std::cout << "Правильная" << std::endl;
-		return true;
+		std::cout << "Неправильная" << std::endl;
+		return false;
 	}
 	virtual void print_sides_count() {
 
@@ -40,7 +39,7 @@ protected:
 	int A; int B; int C;
 	
 public:
-
+	
 	Triangle( int a_, int b_, int c_, int A_, int B_, int C_) :Figure() {
 		a = a_;
 		b = b_;
@@ -56,7 +55,11 @@ public:
 
 	}
 	bool check() override {
-		// Проверяем, что сумма углов равна 180 градусов
+		 // Проверка треугольника
+		if (!Figure::check()) { // вызов check() у предка Figure
+			return false;
+		}
+		// Проверяем, что сумма углов равна 180 градусов//проверяем свойства треугольника, если они есть
 		if (A + B + C != 180) {
 			std::cout << "Неправильная" << std::endl;
 			return false;
@@ -66,10 +69,7 @@ public:
 			std::cout << "Правильная" << std::endl;
 			return true;
 		}
-		
-
-	}
-	
+	}	
 	void print_sides_count() {
 		std::cout << "Количество сторон: 3" << std::endl;
 		std::cout << "Стороны: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << std::endl;
@@ -90,6 +90,9 @@ public:
 	}
 	//прямоугольный треугольник(угол C всегда равен 90);
 	 bool check() override {
+		 if (!Triangle::check()) { // вызов check() у предка Triangle
+			 return false;
+		 }
 		
 		if (C != 90) {
 
@@ -114,6 +117,9 @@ public:
 
 	}
 	bool check() override {
+		if (!Triangle::check()) { // вызов check() у предка Triangle
+			return false;
+		}
 
 		if (a != c && A != C) {
 
@@ -140,6 +146,10 @@ public:
 
 	}
 	bool check() override {
+		if (!Triangle::check()) { // вызов check() у предка Triangle
+			return false;
+		}
+
 
 		if ((a != c && a != b || c != a && c != b || b != a && b != c)&&(A != 60 || B != 60 || C != 60)) {
 
@@ -186,6 +196,9 @@ public:
 	}
 	//четырёхугольник (стороны и углы произвольные, количество сторон равно 4, сумма углов равна 360);
 	bool check() override  {
+		if (!Figure::check()) { // вызов check() у предка Figure
+			return false;
+		}
 
 		if (A + B + C + D != 360) {
 
@@ -212,6 +225,9 @@ public:
 
 	}
 	bool check() override {
+		if (!Quadrangle::check()) { // вызов check() у предка Figure
+			return false;
+		}
 
 		if ((a != b && c != d)&& (A + B + C + D != 90)) {
 
@@ -223,9 +239,7 @@ public:
 			
 			std::cout << "Правильная" << std::endl;
 			return true;
-		}
-
-		
+		}		
 	}
 };
 class Square :public Quadrangle {
@@ -237,9 +251,11 @@ public:
 	void fig_type() override {
 
 		std::cout << "Квадрат:" << std::endl;
-
 	}
 	bool check() override {
+		if (!Quadrangle::check()) { // вызов check() у предка Figure
+			return false;
+		}
 		if ((a != b && a != c && a != d || b != a && b != c && b != d || c != a && c != b && c != d)&& (A != 90 && B != 90 && C != 90 && D != 90)) {
 
 			
@@ -251,8 +267,7 @@ public:
 			std::cout << "Правильная" << std::endl;
 			return true;
 		}
-
-		
+	
 	}
 };
 class Parallelogram :public Quadrangle {
@@ -268,6 +283,9 @@ public:
 	}
 	//параллелограмм (стороны a,c и b,d попарно равны, углы A,C и B,D попарно равны);
 	bool check() override {
+		if (!Quadrangle::check()) { // вызов check() у предка Figure
+			return false;
+		}
 
 		if ((a != b && c != d)&& (A != B && C != D)) {
 
@@ -293,6 +311,9 @@ public:
 
 	}
 	bool check() override {
+		if (!Quadrangle::check()) { // вызов check() у предка Figure
+			return false;
+		}
 		if (A != B && C != D) {
 
 			
